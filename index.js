@@ -25,7 +25,7 @@ const connectToDB = async () => {
 
 app.use(
   cors({
-    origin: "*", // Update for production
+    origin: process.env.FRONTEND_URL, // Update for production
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
