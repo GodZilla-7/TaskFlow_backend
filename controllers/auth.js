@@ -31,7 +31,7 @@ export async function login(req, res, next) {
         res.cookie("token", token, {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "strict",
+            sameSite: "None",
         });
 
         // ✅ Send username in response
@@ -80,7 +80,7 @@ export async function logout(req, res, next) {
         res.clearCookie("token", {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production",
-            sameSite: "strict",
+            sameSite: "None",
         });
 
         res.status(200).json({ message: "Logout successful" });
