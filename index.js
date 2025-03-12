@@ -52,7 +52,5 @@ app.use((error, req, res, next) => {
 
 // Start Server after connecting to DB
 connectToDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`🚀 Server is running on port ${PORT}`);
-  });
+  module.exports = app;
 });
