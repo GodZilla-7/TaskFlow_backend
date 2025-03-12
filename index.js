@@ -22,7 +22,7 @@ const connectToDB = async () => {
   }
 };
 
-// Middleware
+
 app.use(
   cors({
     origin: "*", // Update for production
