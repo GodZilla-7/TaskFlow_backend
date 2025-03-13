@@ -30,7 +30,7 @@ export async function login(req, res, next) {
 
         res.cookie("token", token, {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
+            secure: true,
             sameSite: "None",
         });
 
@@ -79,7 +79,7 @@ export async function logout(req, res, next) {
     try {
         res.clearCookie("token", {
             httpOnly: true,
-            secure: process.env.NODE_ENV === "production",
+            secure: true,
             sameSite: "None",
         });
 
